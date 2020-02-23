@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Schedule It!</title>
+  <link rel="stylesheet" type="text/css" href="/static/main.css">
+</head>
+<body>
+  <header class="page-header group">
+  <div class="logo">
+    <h1>Hunter Codefest</h1>
+    <h2>2020 Submission</h2>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li class="active"><a href="https://github.com/hunter-classes/winter-2020-codefest-submissions-xing-val-joe">Github</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <header>
+    <h1>Schedule IT!</h1>
+    <h2><i>for</i> Google Calendar</h2>
+  </header>
+  <article>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div style="background:red; border:5px solid red;" class="flashes">
+                    {% for message in messages %}
+                        <b>{{ message }}</b>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+     
+        {% block content %}
+        {% endblock %}
+      
+  </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% if resJSON is none %}
+    <p>Whoops, looks like there was some trouble scheduling your event!</p>
+    <input type="button" onclick="history.back();" value="Try Again">
+    {% else %}
+    <section id="success">
+    <p>Woohoo, your appointment was scheduled!</p>
+    <p>
+        <b>Appointment Details:</b><br>
+        <ul>
+            <li>Name: {{ apptName }}</li>
+            <li>Location: {{ apptLoc }}</li>
+            <li>Start: {{ apptStart }}</li>
+            <li>End: {{ apptEnd }}</li>
+        </ul>
+    </p>
+    </section>
+    <form action="/search"><input class="btn btn-large btn-primary" type="submit" value="Schedule Another Appointment!"></form>
+ 
+        <form align="right" action="/logout"><input class="btn" type="submit" value="Log me out."></form>
+ 
+    {% endif %}
+{% endblock %}
